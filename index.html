@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Manager</title>
+    <style>
+      html {
+        background-color: oklch(98.4% 0.003 247.858);
+      }
+      html.dark {
+        background-color: oklch(12.9% 0.042 264.695);
+      }
+    </style>
+    <script>
+      try {
+        const saved = localStorage.getItem('password-manager-theme')
+        if (saved && JSON.parse(saved).state.theme === 'dark') {
+          document.documentElement.classList.add('dark')
+        }
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
